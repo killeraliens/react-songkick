@@ -9,7 +9,8 @@ class SearchByName extends Component {
     }
   }
 
-  updateValue = (event) => {
+  handleChange = (event) => {
+    this.props.search(event.target.value);
     this.setState({
       term: event.target.value
     })
@@ -18,7 +19,7 @@ class SearchByName extends Component {
   render() {
     return (
       <div className="search-input-contain">
-        <input value={this.state.term} className="form-control search-input" onChange={this.updateValue}></input>
+        <input value={this.state.term} className="form-control search-input" onChange={this.handleChange}></input>
       </div>
     )
   }

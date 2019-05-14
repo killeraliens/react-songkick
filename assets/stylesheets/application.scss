@@ -53,11 +53,17 @@ body {
 
 .right-scene {
   flex: 0 0 40%;
-  background-color: rgba(20, 20, 20, 0.5);
-  .listings {
+  // background-color: rgba(20, 20, 20, 0.5);
+  .listing {
     overflow: scroll;
+    padding: 8px;
     .event-card {
-
+      padding: 0px 8px;
+      margin-bottom: 8px;
+      line-height: 40px;
+      font-size: 16px;
+      background-color: rgba(20, 20, 20, 0.2);
+      // color: white;
     }
 
   }
