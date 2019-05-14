@@ -2,9 +2,63 @@ body {
   font-family: Helvetica;
 }
 
-#root {
+#root > div {
   height: 100vh;
+}
+
+.nav-bar {
+  height: 60px;
+  background-color: rgba(20, 20, 20, 0.2);
+  padding: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  .search-input-contain {
+    flex: 0 0 40%;
+    margin: 0 auto;
+    position: relative;
+    .search-input {
+      height: 100%;
+      width: 100%;
+      padding-left: 40px;
+      font-size: 18px;
+    }
+    &:before {
+      font-family: FontAwesome;
+      content: '\f002';
+      font-size: 22px;
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      z-index: 10;
+    }
+  }
+
+  .links {
+    flex: 0 0 60%;
+  }
+}
+
+.scene-contain {
+  display: flex;
+  height: 100vh;
+
+}
+
+.left-scene {
+  flex: 0 0 60%;
+  .displayed-event {
+
+  }
+}
+
+.right-scene {
+  flex: 0 0 40%;
+  background-color: rgba(20, 20, 20, 0.5);
+  .listings {
+    overflow: scroll;
+    .event-card {
+
+    }
+
+  }
 }
