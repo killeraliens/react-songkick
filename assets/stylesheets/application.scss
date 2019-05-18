@@ -11,32 +11,37 @@ body {
   background-color: rgba(20, 20, 20, 0.2);
   padding: 10px;
   display: flex;
+  // .links {
+  //   flex: 0 0 60%;
+  // }
+}
 
-  .search-input-contain {
-    flex: 0 0 40%;
-    margin: 0 auto;
-    position: relative;
-    .search-input {
-      height: 100%;
-      width: 100%;
-      padding-left: 40px;
-      font-size: 18px;
-    }
-    &:before {
-      font-family: FontAwesome;
-      content: '\f002';
-      font-size: 22px;
-      position: absolute;
-      left: 8px;
-      top: 6px;
-      z-index: 10;
+.search-form {
+  flex: 0 0 40%;
+  margin: 0 auto;
+  position: relative;
+  .search-input {
+    height: 100%;
+    width: 100%;
+    padding-left: 40px;
+    font-size: 18px;
+    border-radius: 0px;
+    &:focus {
+      border: 2px solid black;
+      box-shadow: none;
     }
   }
-
-  .links {
-    flex: 0 0 60%;
+  &:before {
+    font-family: FontAwesome;
+    content: '\f002';
+    font-size: 22px;
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    z-index: 10;
   }
 }
+
 
 .scene-contain {
   display: flex;

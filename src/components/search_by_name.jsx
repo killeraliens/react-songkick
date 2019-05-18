@@ -10,17 +10,22 @@ class SearchByName extends Component {
   }
 
   handleChange = (event) => {
-    this.props.search(event.target.value);
     this.setState({
       term: event.target.value
     })
-  }
+  };
+
+  handleSubmit = (event) => {
+    console.log(`searching.. ${this.state.term}`);
+    this.props.search(this.state.term);
+    event.preventDefault();
+  };
 
   render() {
     return (
-      <div className="search-input-contain">
-        <input value={this.state.term} className="form-control search-input" onChange={this.handleChange}></input>
-      </div>
+    <form className="search-form" onSubmit={this.handleSubmit}>
+      <input value={this.state.term} className="form-control search-input" onChange={this.handleChange} ></input>
+    </form>
     )
   }
 }

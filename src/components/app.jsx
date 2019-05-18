@@ -9,16 +9,32 @@ class App extends Component {
 
     this.state = {
       events: [],
-      selectedEvent: {}
+      selectedEvent: {},
     }
   }
 
   searchByName = (term) => {
-    console.log(`searching ${term}..`);
-    const events = [{title: "Obituary", city: "Phoenix", date: "August 31", id: "eventone"}, {title: "Necrowretch", city: "Chicago", date: "September 16", id: "eventtwo"}]
-    this.setState({
-      events: events
-    })
+    //const url = `https://api.songkick.com/api/3.0/artists/${term}/calendar.json?apikey=${process.env.API_URL}`;
+    const idUrl = `https://api.songkick.com/api/3.0/search/artists.json?apikey=${process.env.API_URL}&query=${term}`;
+    fetch(idUrl)
+    .then((results) => results.json())
+    .then((json) => {
+      const artistArr = json.resultsPage.results.artist;
+      const filtered = artistArr.filter( artist => { return artist.displayName.toLowerCase() === term.toLowerCase() });
+      console.log(filtered[0].id);
+      searchId(filtered[0].id)
+    });
+    // const url = `https://api.songkick.com/api/3.0/artists/${this.state.artists[0].displayName}/calendar.json?apikey=${process.env.API_URL}`;
+    // fetch(url)
+    // .then((results) => results.json())
+    // .then((json) => {
+    //   console.log(json);
+    // });
+
+    // const events = [{title: "Obituary", city: "Phoenix", date: "August 31", id: "eventone"}, {title: "Necrowretch", city: "Chicago", date: "September 16", id: "eventtwo"}]
+    // this.setState({
+    //   events: events
+    // })
   };
 
   select = (index) => {
