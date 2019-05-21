@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 
 class EventShow extends Component {
+
   render() {
-    if (!this.props.title) {
+    if (Object.entries(this.props.selectedEvent).length === 0) {
       return null;
     }
+    let event = this.props.selectedEvent;
     return(
-      <div>{`${this.props.date} - ${this.props.title} - ${this.props.city}`}</div>
+      <div>{`${event.start.date} - ${event.displayName} - ${event.location.city}`}</div>
     )
   }
 }

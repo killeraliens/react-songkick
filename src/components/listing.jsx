@@ -3,6 +3,9 @@ import EventCard from './event_card.jsx';
 
 const Listing = (props) => {
   // console.log(props);
+  if (props.events.length === 0) {
+    return null;
+  }
   return (
     <div className="listing" >
       {props.events.map((event, index) => {

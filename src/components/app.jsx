@@ -45,10 +45,13 @@ class App extends Component {
     const events = this.state.events;
     this.setState({
       selectedEvent: events[index]
-    })
+    }, function() {
+      console.log()
+    });
   };
 
   render() {
+    console.log(this.state.selectedEvent);
     return (
       <div>
         <div className="nav-bar">
@@ -57,10 +60,7 @@ class App extends Component {
         <div className="scene-contain">
           <div className="left-scene">
             <EventShow
-              title={this.state.selectedEvent.displayName}
-              city={this.state.selectedEvent.location}
-              date={this.state.selectedEvent}
-
+              selectedEvent={this.state.selectedEvent}
             />
           </div>
           <div className="right-scene">
