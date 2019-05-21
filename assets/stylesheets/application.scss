@@ -4,6 +4,8 @@ body {
 
 #root > div {
   height: 100vh;
+  position: sticky;
+  top: 0px;
 }
 
 .nav-bar {
@@ -11,6 +13,8 @@ body {
   background-color: rgba(20, 20, 20, 0.2);
   padding: 10px;
   display: flex;
+  position: sticky;
+  top: 0px;
   // .links {
   //   flex: 0 0 60%;
   // }
@@ -25,9 +29,9 @@ body {
     width: 100%;
     padding-left: 40px;
     font-size: 18px;
-    border-radius: 0px;
+    // border-radius: 0px;
     &:focus {
-      border: 2px solid black;
+      border: 1px solid black;
       box-shadow: none;
     }
   }
@@ -46,19 +50,18 @@ body {
 .scene-contain {
   display: flex;
   height: 100vh;
-
 }
 
 .left-scene {
   flex: 0 0 60%;
   .displayed-event {
-
   }
 }
 
 .right-scene {
   flex: 0 0 40%;
   // background-color: rgba(20, 20, 20, 0.5);
+
   .listing {
     overflow: scroll;
     padding: 8px;

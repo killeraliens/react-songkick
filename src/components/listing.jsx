@@ -8,9 +8,10 @@ const Listing = (props) => {
       {props.events.map((event, index) => {
         return (
           <EventCard
-            title={event.title}
-            city={event.city}
-            date={event.date}
+            title={event.displayName}
+            city={event.location.city}
+            date={event.start.date}
+            venue={event.venue.displayName}
             index={index}
             key={event.id}
             select={props.select}
