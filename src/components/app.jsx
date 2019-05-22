@@ -40,7 +40,11 @@ class App extends Component {
       .then((json) => {
         const artistArr = json.resultsPage.results.artist;
         const filtered = artistArr.filter( artist => { return artist.displayName.toLowerCase() === term.toLowerCase() });
-        this.searchId(filtered[0].id);
+        if (filtered.length !== 0) {
+          this.searchId(filtered[0].id);
+        } else {
+          console.log("try another band name");
+        }
       });
     } else {
       console.log("no results!");
