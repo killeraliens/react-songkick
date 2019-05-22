@@ -57,7 +57,7 @@ class App extends Component {
   };
 
   render() {
-    console.log();
+    console.log(this.state.selectedEvent);
     return (
       <div>
         <div className="nav-bar">

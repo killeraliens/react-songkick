@@ -11,7 +11,9 @@ class EventShow extends Component {
       <div className={"displayed-event"}>
         <div className="event-text">
           <p>{`${event.start.date}`}</p>
-          <p>{`${event.displayName} - ${event.location.city}`}</p>
+          <p>{`${event.displayName}`}</p>
+          <p>{`${event.location.city}`}</p>
+          <a href={`${event.uri}`} target="_blank">tickets</a>
         </div>
       </div>
     )

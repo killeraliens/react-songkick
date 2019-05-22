@@ -16,6 +16,7 @@ body {
   display: flex;
   position: sticky;
   top: 0px;
+  //flex-direction: row-reverse;
   .sk-logo {
     height: 100%;
     margin: 0 auto;
@@ -26,6 +27,7 @@ body {
   flex: 0 0 40%;
   //margin: 0 auto;
   position: relative;
+  padding-left: 10px;
   .search-input {
     height: 100%;
     width: 100%;
@@ -42,7 +44,7 @@ body {
     content: '\f002';
     font-size: 22px;
     position: absolute;
-    left: 10px;
+    left: 20px;
     top: 4px;
     z-index: 10;
   }
@@ -61,7 +63,8 @@ body {
     flex-grow: 1;
     height: calc(100vh);
     // background-color: yellow;
-    font-family: 'UnifrakturMaguntia', cursive;
+    //font-family: 'UnifrakturMaguntia', cursive;
+    font-weight: bold;
   }
   .event-text {
     margin: 60px;
