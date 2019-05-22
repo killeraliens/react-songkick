@@ -16,14 +16,15 @@ body {
   display: flex;
   position: sticky;
   top: 0px;
-  // .links {
-  //   flex: 0 0 60%;
-  // }
+  .sk-logo {
+    height: 100%;
+    margin: 0 auto;
+  }
 }
 
 .search-form {
   flex: 0 0 40%;
-  margin: 0 auto;
+  //margin: 0 auto;
   position: relative;
   .search-input {
     height: 100%;

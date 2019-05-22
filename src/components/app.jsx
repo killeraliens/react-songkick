@@ -3,6 +3,7 @@ import SearchByName from './search_by_name.jsx';
 import Listing from './listing.jsx';
 import EventCard from './event_card.jsx';
 import EventShow from './event_show.jsx';
+// import powered-by-songkick-pink from '../assets/attribution-assets/powered-by-sk/powered-by-songkick-pink.png';
 
 class App extends Component {
   constructor(props) {
@@ -56,10 +57,11 @@ class App extends Component {
   };
 
   render() {
-    //console.log(this.state.events);
+    console.log();
     return (
       <div>
         <div className="nav-bar">
+          <img className="sk-logo" src="../assets/attribution-assets/powered-by-sk/powered-by-songkick-pink.png" alt=""/>
           <SearchByName search={this.searchByName}/>
         </div>
         <div className="scene-contain">
