@@ -42,6 +42,9 @@ class App extends Component {
         const filtered = artistArr.filter( artist => { return artist.displayName.toLowerCase() === term.toLowerCase() });
         if (filtered.length !== 0) {
           this.searchId(filtered[0].id);
+          this.setState({
+            selectedEvent: {}
+          });
         } else {
           console.log("try another band name");
         }
