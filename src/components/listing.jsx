@@ -1,10 +1,10 @@
 import React, { Component} from 'react';
 import EventCard from './event_card.jsx';
+import NoResults from './no_results.jsx';
 
 const Listing = (props) => {
-  // console.log(props);
-  if (props.events.length === 0) {
-    return null;
+  if (!props.events) {
+    return <NoResults />;
   }
   return (
     <div className="listing" >

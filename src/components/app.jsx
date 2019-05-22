@@ -19,24 +19,31 @@ class App extends Component {
     fetch(url)
     .then(results => results.json())
     .then(json => {
-      console.log(json.resultsPage.results.event);
+      //console.log(json.resultsPage.results.event);
       const events = json.resultsPage.results.event;
       this.setState({
         events: events
+      }, function() {
+        console.log(this.state.events);
       });
     });
   };
 
   searchByName = (term) => {
     const idUrl = `https://api.songkick.com/api/3.0/search/artists.json?apikey=${process.env.API_URL}&query=${term}`;
-    fetch(idUrl)
-    .then((results) => results.json())
-    .then((json) => {
-      const artistArr = json.resultsPage.results.artist;
-      const filtered = artistArr.filter( artist => { return artist.displayName.toLowerCase() === term.toLowerCase() });
-      console.log(filtered[0].id);
-      this.searchId(filtered[0].id)
-    });
+    if (term !== "") {
+      fetch(idUrl)
+      .then((results) => {
+        return results.json()
+      })
+      .then((json) => {
+        const artistArr = json.resultsPage.results.artist;
+        const filtered = artistArr.filter( artist => { return artist.displayName.toLowerCase() === term.toLowerCase() });
+        this.searchId(filtered[0].id);
+      });
+    } else {
+      console.log("no results!");
+    }
   };
 
 
@@ -45,13 +52,11 @@ class App extends Component {
     const events = this.state.events;
     this.setState({
       selectedEvent: events[index]
-    }, function() {
-      console.log()
     });
   };
 
   render() {
-    console.log(this.state.selectedEvent);
+    //console.log(this.state.events);
     return (
       <div>
         <div className="nav-bar">

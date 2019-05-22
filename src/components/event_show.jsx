@@ -8,7 +8,12 @@ class EventShow extends Component {
     }
     let event = this.props.selectedEvent;
     return(
-      <div>{`${event.start.date} - ${event.displayName} - ${event.location.city}`}</div>
+      <div className={"displayed-event"}>
+        <div className="event-text">
+          <p>{`${event.start.date}`}</p>
+          <p>{`${event.displayName} - ${event.location.city}`}</p>
+        </div>
+      </div>
     )
   }
 }

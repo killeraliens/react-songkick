@@ -1,16 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|UnifrakturMaguntia");
+
 body {
   font-family: Helvetica;
 }
 
 #root > div {
   height: 100vh;
-  position: sticky;
-  top: 0px;
+
 }
 
 .nav-bar {
   height: 60px;
-  background-color: rgba(20, 20, 20, 0.2);
+  background-color: rgba(20, 20, 20, 1.0);
   padding: 10px;
   display: flex;
   position: sticky;
@@ -55,15 +56,26 @@ body {
 .left-scene {
   flex: 0 0 60%;
   .displayed-event {
+    display: flex;
+    flex-grow: 1;
+    height: calc(100vh);
+    // background-color: yellow;
+    font-family: 'UnifrakturMaguntia', cursive;
+  }
+  .event-text {
+    margin: 60px;
+    align-content: center;
+    font-size: 24px;
+    text-align: center;
   }
 }
 
 .right-scene {
   flex: 0 0 40%;
   // background-color: rgba(20, 20, 20, 0.5);
+  overflow: scroll;
 
   .listing {
-    overflow: scroll;
     padding: 8px;
     .event-card {
       padding: 0px 8px;
@@ -75,4 +87,8 @@ body {
     }
 
   }
+}
+
+.no-results {
+  text-align: center;
 }
